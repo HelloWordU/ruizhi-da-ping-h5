@@ -1,0 +1,21 @@
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import App from "./App.vue";
+import router from "./router";
+import api from "@/api/request";
+import { Button, Toast, Field, Popup, Swipe, SwipeItem } from "vant";
+import "./assets/main.css";
+import "vant/lib/index.css";
+import "amfe-flexible/index.js";
+const app = createApp(App);
+
+app.config.globalProperties.$api = api;
+app.use(createPinia());
+app.use(router);
+app.use(Button);
+app.use(Toast);
+app.use(Field);
+app.use(Popup);
+app.use(Swipe);
+app.use(SwipeItem);
+app.mount("#app");
